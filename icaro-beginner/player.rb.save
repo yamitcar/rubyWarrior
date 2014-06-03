@@ -1,0 +1,25 @@
+class Player
+
+    def play_turn(warrior)
+
+	if warrior.health < 14 and warrior.feel.empty?
+	    health_warrior(warrior)
+        else
+	    walk_and_attack(warrior)
+	end
+  end
+
+  def health_warrior(warrior)
+	if warrior.health < 14
+	    warrior.rest!
+    	end        
+  end
+ 
+  def walk_and_attack(warrior)
+	if warrior.feel.empty?
+            warrior.walk!
+        else
+            warrior.attack!
+        end
+  end
+end
